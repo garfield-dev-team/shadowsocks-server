@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install snapd && apt-get install snapcraft
+RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get -y install snapd && apt-get -y install snapcraft
 
 RUN snap install shadowsocks-libev
 
