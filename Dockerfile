@@ -1,4 +1,4 @@
-FROM shadowsocks-libev:latest
+FROM alpine:latest
 
 RUN apk update && apk add snapd && apk add snapcraft
 
