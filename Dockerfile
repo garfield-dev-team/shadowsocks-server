@@ -1,6 +1,8 @@
 FROM shadowsocks-libev:latest
 
-RUN apk update
+RUN apk update && apk add snapd && apk add snapcraft
+
+RUN snap install shadowsocks-libev
 
 ENV SS_SERVER_PORT=8388
 ENV SS_PASSWORD=your_password
