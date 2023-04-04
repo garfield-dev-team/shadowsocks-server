@@ -1,8 +1,8 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk update && apk add snapd && apk add snapcraft
+RUN apt-get update && apt-get install shadowsocks-libev
 
-RUN snap install shadowsocks-libev
+# RUN snap install shadowsocks-libev
 
 ENV SS_SERVER_PORT=8388
 ENV SS_PASSWORD=your_password
