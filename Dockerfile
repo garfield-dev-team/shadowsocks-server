@@ -3,8 +3,7 @@ FROM ubuntu:latest
 RUN DEBIAN_FRONTEND=noninteractive \
     && apt-get update  \
     && apt-get -y install shadowsocks-libev \
-
-RUN mkdir -p ~/build-area/  \
+    && mkdir -p ~/build-area/  \
     && cp ./scripts/build_deb.sh ~/build-area/ \
     && cd ~/build-area \
     && ./build_deb.sh
