@@ -1,8 +1,8 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install shadowsocks-libev
+RUN apt-get update && apt-get install snapd && apt-get install snapcraft
 
-# RUN snap install shadowsocks-libev
+RUN snap install shadowsocks-libev
 
 ENV SS_SERVER_PORT=8388
 ENV SS_PASSWORD=your_password
