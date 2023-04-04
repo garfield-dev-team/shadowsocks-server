@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN sudo apt update && sudo apt install shadowsocks-libev
+RUN apt update && apt install shadowsocks-libev
 
 ENV SS_SERVER_PORT=8388
 ENV SS_PASSWORD=your_password
