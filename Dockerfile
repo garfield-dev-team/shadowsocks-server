@@ -1,8 +1,13 @@
 FROM ubuntu:latest
 
-RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get -y install snapd && apt-get -y install snapcraft
+RUN DEBIAN_FRONTEND=noninteractive \
+    && apt-get update  \
+    && apt-get -y install shadowsocks-libev \
 
-RUN snap install shadowsocks-libev
+RUN mkdir -p ~/build-area/  \
+    && cp ./scripts/build_deb.sh ~/build-area/ \
+    && cd ~/build-area \
+    && ./build_deb.sh
 
 ENV SS_SERVER_PORT=8388
 ENV SS_PASSWORD=your_password
